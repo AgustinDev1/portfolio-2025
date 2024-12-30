@@ -536,3 +536,33 @@ button:hover {
 .tech-icon:hover {
     color: white;
 }
+
+.project-icon-link {
+    font-size: 24px;
+    margin-top: 10px;
+    display: inline-block;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.project-icon-link i {
+    font-size: 24px;
+    transition: color 0.3s ease;
+}
+
+.project-icon-link:hover i {
+    color: #0077b5; 
+}
+
+.project-icon-link {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    font-size: 16px;
+    margin-top: 10px;
+    color: #ffffff;
+}
+
+.project-icon-link i {
+    margin-right: 8px; 
+}
