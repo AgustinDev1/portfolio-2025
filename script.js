@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const sections = document.querySelectorAll("section");
     const navLinks = document.querySelectorAll("nav ul li a");
 
+    // Función para activar el enlace correspondiente durante el scroll
     function activateLink() {
         let index = sections.length;
         while (--index && window.scrollY + 50 < sections[index].offsetTop) {}
@@ -12,20 +13,22 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 
+    // Función para realizar el desplazamiento suave (smooth scroll)
     function smoothScroll(target) {
         const targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
         const startPosition = window.pageYOffset;
         const distance = targetPosition - startPosition;
+        const duration = window.innerWidth <= 768 ? 1500 : 3000; // Reducir la duración en móviles
         let startTime = null;
 
         function animation(currentTime) {
             if (startTime === null) startTime = currentTime;
             const timeElapsed = currentTime - startTime;
-            const run = ease(timeElapsed, startPosition, distance, 3000);
+            const run = ease(timeElapsed, startPosition, distance, duration);
 
             window.scrollTo(0, run);
 
-            if (timeElapsed < 3000) requestAnimationFrame(animation);
+            if (timeElapsed < duration) requestAnimationFrame(animation);
         }
 
         function ease(t, b, c, d) {
@@ -38,13 +41,14 @@ document.addEventListener("DOMContentLoaded", function() {
         requestAnimationFrame(animation);
     }
 
+    // Añadir el evento de click en los enlaces de navegación
     navLinks.forEach(link => {
         link.addEventListener('click', (event) => {
             const targetUrl = link.getAttribute('href');
             
             // Verifica si el enlace es interno
             if (targetUrl.startsWith('#')) {
-                event.preventDefault(); // Solo prevenir el comportamiento por defecto de enlaces internos
+                event.preventDefault(); // Prevenir el comportamiento por defecto de enlaces internos
                 const targetSection = document.querySelector(targetUrl);
                 if (targetSection) {
                     smoothScroll(targetSection);
@@ -59,6 +63,7 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
+    // Activar el enlace correspondiente al hacer scroll
     window.addEventListener("scroll", activateLink);
     activateLink();
 });

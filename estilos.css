@@ -35,6 +35,26 @@
     }
 }
 
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    0% {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
 html {
     cursor: url('icons8-cursor-48.png') 16 16, pointer;
     scroll-behavior: smooth;
@@ -68,6 +88,10 @@ body {
     background-color: rgba(0, 174, 255, 0.8);
 }
 
+::-webkit-scrollbar-thumb:active {
+    background-color: rgb(0, 174, 255);
+}
+
 * {
     scrollbar-width: thin;
     scrollbar-color: rgb(0, 174, 255) var(--background-color);
@@ -88,6 +112,7 @@ a {
     border: 2px solid rgba(0, 174, 255, 0.5);
     padding: 5px 10px;
     border-radius: 10px;
+    transition: all 0.3s ease;
 }
 
 a:hover {
@@ -155,7 +180,7 @@ section {
     flex-direction: column;
     position: relative;
     align-items: center;
-    animation: zoomIn 1s ease-in-out 0.3s forwards; /* Animación de entrada */
+    animation: slideUp 1.2s ease-out forwards;
 }
 
 .text-container {
@@ -175,8 +200,31 @@ p {
     border-radius: 50%;
     margin-top: 20px;
     border: 3px solid transparent;
-    animation: borderTransition 3s infinite alternate, zoomIn 1s ease-in-out 0.3s forwards; /* Añadimos la animación de zoom */
+    animation: borderTransition 3s infinite alternate, zoomIn 1s ease-in-out 0.3s forwards;
     box-shadow: 0 0 20px rgba(0, 174, 255, 0.5);
+}
+
+/* Contenedor de la foto y la bandera */
+.profile-and-flag {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    margin-top: 20px;
+    gap: 30px;
+}
+
+.profile-and-flag .profile-image {
+    width: 150px; /* Mismo tamaño de la bandera */
+    height: 150px;
+}
+
+.flag-image {
+    width: 150px;
+    height: auto;
+    margin-left: auto;
+    margin-top: 10px;
+    animation: slideUp 1.5s ease-out 1s forwards;
 }
 
 nav ul li a.active {
@@ -199,7 +247,7 @@ nav ul li a.active {
     padding: 20px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     border: 2px solid transparent;
-    animation: borderTransition 3s infinite alternate;
+    animation: borderTransition 3s infinite alternate, zoomIn 1s ease-in-out 0.5s forwards;
     transition: transform 0.3s ease;
 }
 
@@ -287,6 +335,7 @@ button {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s;
 }
 
 button:hover {
@@ -304,19 +353,32 @@ button:hover {
     margin-bottom: 10px;
     color: var(--text-color);
     text-decoration: none;
-    font-size: 24px; /* Tamaño adecuado para los iconos */
+    font-size: 24px;
 }
 
 .social-icon i {
     margin-right: 10px;
 }
 
-/* Contenedor para los botones de LinkedIn y GitHub */
 .social-links {
     display: flex;
-    justify-content: center; /* Alineamos los botones horizontalmente */
-    gap: 20px; /* Espacio entre los botones */
-    margin-top: 20px; /* Añadimos un margen superior */
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.social-links a {
+    background-color: var(--section-background);
+    padding: 10px 15px;
+    border-radius: 10px;
+    border: 2px solid var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: white;
 }
 
 @media (max-width: 768px) {
@@ -459,62 +521,18 @@ button:hover {
     flex-wrap: wrap;
 }
 
-.flag-image {
-    width: 80px;
-    height: auto;
+.project-tech {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
 }
 
-@keyframes slideUp {
-    0% {
-        transform: translateY(50px);
-        opacity: 0;
-    }
-    100% {
-        transform: translateY(0);
-        opacity: 1;
-    }
+.tech-icon {
+    font-size: 30px;
+    color: var(--primary-color);
+    transition: color 0.3s ease;
 }
 
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
-@keyframes zoomIn {
-    0% {
-        transform: scale(0.9);
-        opacity: 0;
-    }
-    100% {
-        transform: scale(1);
-        opacity: 1;
-    }
-}
-
-section {
-    animation: slideUp 1.2s ease-out forwards;
-}
-
-.project-card {
-    animation: zoomIn 1s ease-in-out 0.5s forwards;
-}
-
-h1, p, .social-links, .login-form {
-    animation: fadeIn 1.5s ease-in 0.5s forwards;
-}
-
-.profile-image {
-    animation: zoomIn 1s ease-in-out 0.3s forwards;
-}
-
-.flag-image {
-    animation: slideUp 1.5s ease-out 1s forwards;
-}
-
-nav ul li a {
-    animation: fadeIn 1.5s ease-in 0.3s forwards;
+.tech-icon:hover {
+    color: white;
 }

@@ -18,49 +18,56 @@
         <ul>
             <li><a href="#inicio"><i class="fas fa-home"></i> Inicio</a></li>
             <li><a href="#sobre-mi"><i class="fas fa-user"></i> Sobre Mí</a></li>
-            <li><a href="#proyectos"><i class="fas fa-project-diagram"></i> Proyectos</a></li>
-            <li><a href="#skills"><i class="fas fa-cogs"></i> Habilidades</a></li> <!-- Nuevo enlace para "Skills" -->
-            <li><a href="#contacto"><i class="fas fa-envelope"></i> Contactos</a></li>
+            <li><a href="#skills"><i class="fas fa-project-diagram"></i> Skills</a></li>
+            <li><a href="#proyectos"><i class="fas fa-cogs"></i> Proyectos</a></li>
+            <li><a href="#contacto"><i class="fas fa-envelope"></i> Contacto</a></li>
         </ul>
     </nav>
-
+    
+    <!-- se reescontruyo el navbar con el enlace que agregue
+<!-- EMPIEZAN TODAS LAS SECCIONES DESDE EL INICIO - AGUSTIN GIBAUT1 -->
     <section id="inicio">
         <div class="text-container">
+            <!-- CONTIENE EFECTO ESCRITURA QUE LO AGREGUE Y PERSONALIZE CON CSS -->
             <h1 class="typing-effect">Hola, soy Agustín Gibaut</h1>
-            <p class="static-text">Desarrollador de Software</p>
-            <p>Córdoba, Argentina</p>
+            <p class="static-text">Desarrollador de Software!</p>
+            <div class="profile-container">
+                <img src="unnamed.jpg" alt="Foto de Agustín Gibaut" class="profile-image">
+            </div>
+            <p>Córdoba, Argentina</p>            
+            <!-- FOTO DE PERFIL MIA -->
+        <!-- espacio para mejor orden -->
+        <br>
+        <br>
+            <!-- BOTON DE CURRICULUM (AUN NO ESTA TERMINADO) -->
             <a href="https://drive.google.com/file/d/1Lj4_9TCMNcDxqfLAmLjr5bM2zEvSKIzF/view">Descargar CV</a>
         </div>
-        <div class="profile-container">
-            <img src="unnamed.jpg" alt="Foto de Agustín Gibaut" class="profile-image">
-            <div class="social-icons">
-                <a href="https://github.com/AgustinDev1" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/agustin-gibaut-61baa5327/" target="_blank"><i class="fab fa-linkedin"></i></a>
-            </div>
-        </div>
-
-        <!-- Bandera de Argentina a la derecha -->
-        <img src="descarga.png" alt="Bandera de Argentina" class="argentina-flag">
-    </section>
+        <!-- CAMBIE DE LUGAR Y POSICION LA FOTO Y EL BOTONDEL CURRICULUM -->
+         <!-- SE ELIMINO LA BANDERA DE ARGENTINA PORQUE ESPECIFICO EN TEXTO -->
 
     <!-- Sobre Mí -->
     <section id="sobre-mi">
         <div class="text-container">
-            <h1><>Sobre Mí<></h1>
+            <h1><i class="fas fa-user"></i> Sobre Mí</h1>
             <p>
                 Soy un apasionado desarrollador de software con experiencia en la creación de aplicaciones web y móviles. Mi enfoque principal es mejorar la experiencia del usuario y optimizar el rendimiento de las aplicaciones. Me encanta aprender nuevas tecnologías y enfrentar desafíos complejos. Actualmente, me especializo en HTML, CSS, JavaScript y Python, pero siempre estoy dispuesto a explorar nuevas herramientas y lenguajes. Estoy en constante búsqueda de oportunidades para crecer profesionalmente y contribuir a proyectos interesantes.
             </p>
+            <p>
+                Además, soy estudiante de <strong>Desarrollo de Software</strong> en el <strong>Instituto Superior Politécnico Córdoba (ISPC)</strong>, donde continúo expandiendo mis conocimientos y habilidades en el campo del desarrollo.
+            </p>
         </div>
     </section>
+    
 
     <!-- Skills -->
     <section id="skills">
         <div class="text-container">
-            <h1><>Habilidades<></h1>
+            <h1>Habilidades</h1>
             <p>
-            tecnologías y herramientas con las que tengo experiencia. Siempre estoy aprendiendo y mejorando mis habilidades.
+                Tecnologías y herramientas con las que tengo experiencia. Siempre estoy aprendiendo y mejorando mis habilidades.
             </p>
         </div>
+        <!-- implementacion de iconos con font awesome para mayor rapidez y no cargar imagenes  -->
         <div class="skills-container">
             <div class="skill-card">
                 <i class="fab fa-html5"></i>
@@ -86,12 +93,27 @@
                 <i class="fab fa-github"></i>
                 <h2>GitHub</h2>
             </div>
+            <div class="skill-card">
+                <i class="fas fa-database"></i>
+                <h2>MySQL</h2>
+            </div>
+            <div class="skill-card">
+                <i class="fab fa-windows"></i>
+                <h2>Visual Studio Code</h2>
+            </div>
+            <div class="skill-card">
+                <i class="fab fa-android"></i>
+                <h2>Android Studio</h2>
+            </div>
+            <div class="skill-card">
+                <i class="fab fa-gitlab"></i>
+                <h2>GitLab</h2>
+            </div>
         </div>
     </section>
 
-    <!-- Proyectos -->
     <section id="proyectos">
-        <h1><>Proyectos<></h1>
+        <h1>Proyectos</h1>
         <div class="project-container">
             <div class="project-card">
                 <a href="https://github.com/AgustinDev1/lapokeinfo" target="_blank" class="project-link">
@@ -102,6 +124,12 @@
                 <a href="https://github.com/AgustinDev1/lapokeinfo" target="_blank" class="project-link">
                     <i class="fab fa-github"></i> Ver en GitHub
                 </a>
+                <div class="project-tech">
+                    <a href="https://www.w3.org/html/" target="_blank" class="tech-icon"><i class="fab fa-html5"></i></a>
+                    <a href="https://www.w3.org/Style/CSS/" target="_blank" class="tech-icon"><i class="fab fa-css3-alt"></i></a>
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" class="tech-icon"><i class="fab fa-js"></i></a>
+                    <a href="https://code.visualstudio.com/" target="_blank" class="tech-icon"><i class="fab fa-windows"></i></a>
+                </div>
             </div>
             <div class="project-card">
                 <a href="https://github.com/tu_usuario/proyecto2" target="_blank" class="project-link">
@@ -112,6 +140,12 @@
                 <a href="https://github.com/tu_usuario/proyecto2" target="_blank" class="project-link">
                     <i class="fab fa-github"></i> Ver en GitHub
                 </a>
+                <div class="project-tech">
+                    <a href="https://www.w3.org/html/" target="_blank" class="tech-icon"><i class="fab fa-html5"></i></a>
+                    <a href="https://www.w3.org/Style/CSS/" target="_blank" class="tech-icon"><i class="fab fa-css3-alt"></i></a>
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" class="tech-icon"><i class="fab fa-js"></i></a>
+                    <a href="https://code.visualstudio.com/" target="_blank" class="tech-icon"><i class="fab fa-windows"></i></a>
+                </div>
             </div>
             <div class="project-card">
                 <a href="https://github.com/tu_usuario/proyecto3" target="_blank" class="project-link">
@@ -122,43 +156,32 @@
                 <a href="https://github.com/tu_usuario/proyecto3" target="_blank" class="project-link">
                     <i class="fab fa-github"></i> Ver en GitHub
                 </a>
+                <div class="project-tech">
+                    <a href="https://www.w3.org/html/" target="_blank" class="tech-icon"><i class="fab fa-html5"></i></a>
+                    <a href="https://www.w3.org/Style/CSS/" target="_blank" class="tech-icon"><i class="fab fa-css3-alt"></i></a>
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" class="tech-icon"><i class="fab fa-js"></i></a>
+                    <a href="https://code.visualstudio.com/" target="_blank" class="tech-icon"><i class="fab fa-windows"></i></a>
+                </div>
             </div>
         </div>
     </section>
+    
 
     <!-- Contacto -->
     <section id="contacto">
-        <h1><>Contacto<></h1>
-        <div class="contact-container">
-            <div class="login-form">
-                <h2>Escribime</h2>
-                <form>
-                    <div class="form-group">
-                        <label for="email">Tu correo</label>
-                        <input type="email" id="email" placeholder="tucorreo@example.com" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="mensaje">Mensaje:</label>
-                        <textarea id="mensaje" placeholder="Escribe tu mensaje aquí..." required></textarea>
-                    </div>
-                    <button type="submit">Enviar</button>
-                </form>
-            </div>
-            <div class="social-links">
-                <h2>Contactame</h2>
-                <a href="https://wa.me/3512580435" target="_blank" class="social-icon">
-                    <i class="fab fa-whatsapp"></i> WhatsApp
-                </a>
-                <a href="https://www.instagram.com/agustin_gibaut19/" target="_blank" class="social-icon">
-                    <i class="fab fa-instagram"></i> Instagram
-                </a>
-                <a href="https://t.me/A'" target="_blank" class="social-icon">
-                    <i class="fab fa-telegram"></i> Telegram
-                </a>
-            </div>
+        <div class="social-links">
+            <h2>Contactame</h2>
+            <a href="https://wa.me/3512580435" target="_blank" class="social-icon">
+                <i class="fab fa-whatsapp"></i> WhatsApp
+            </a>
         </div>
     </section>
+    <div class="social-icons">
+        <a href="https://github.com/AgustinDev1" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/agustin-gibaut-61baa5327/" target="_blank"><i class="fab fa-linkedin"></i></a>
+    </div>
 
+    <!-- al final le cambie y le saque el formulario de contacto y unicamente se dejaron los enlaces -->
     <script src="script.js"></script>
 </body>
 </html>
