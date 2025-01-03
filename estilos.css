@@ -55,15 +55,6 @@
     }
 }
 
-html {
-    cursor: url('icons8-cursor-48.png') 16 16, pointer;
-    scroll-behavior: smooth;
-}
-
-a, button {
-    cursor: url('icons8-cursor-64.png'), pointer;
-}
-
 body {
     background-color: var(--background-color);
     font-family: "Pixelify Sans", sans-serif;
@@ -139,7 +130,7 @@ a:hover::after {
 nav {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     padding: 15px 5%;
 }
 
@@ -193,7 +184,7 @@ p {
     margin-bottom: 25px;
 }
 
-/* Foto de perfil con bordes circulares animados */
+/* Foto de perfil con bordes circulares animados efecto agregado */
 .profile-image {
     width: 120px;
     height: auto;
@@ -214,10 +205,6 @@ p {
     gap: 30px;
 }
 
-.profile-and-flag .profile-image {
-    width: 150px; /* Mismo tamaño de la bandera */
-    height: 150px;
-}
 
 .flag-image {
     width: 150px;
@@ -565,4 +552,39 @@ button:hover {
 
 .project-icon-link i {
     margin-right: 8px; 
+}
+
+/* Estilo para la flecha de volver al inicio */
+#back-to-top {
+    position: fixed;
+    bottom: 20px; /* Ajusta la distancia desde el fondo */
+    right: 20px; /* Ajusta la distancia desde el borde derecho */
+    background-color: #007bff; /* Azul */
+    color: white; /* Texto blanco */
+    border-radius: 50%; /* Hacer el fondo redondeado */
+    padding: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    display: none; /* Inicialmente oculto */
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para darle un efecto flotante */
+    transition: background-color 0.3s ease; /* Transición suave para el cambio de color */
+}
+
+/* Efecto hover para el botón */
+#back-to-top:hover {
+    background-color: #0056b3; /* Azul más oscuro en hover */
+}
+
+/* Estilo para el ícono dentro de la flecha */
+#back-to-top i {
+    font-size: 20px; /* Tamaño del ícono */
+}
+
+/* Ajustes opcionales si quieres que se vea aún mejor en el portfolio */
+@media (max-width: 768px) {
+    #back-to-top {
+        bottom: 15px; /* Ajustar para pantallas más pequeñas */
+        right: 15px; /* Ajustar para pantallas más pequeñas */
+    }
 }

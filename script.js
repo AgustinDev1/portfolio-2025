@@ -63,7 +63,43 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
-    // Activar el enlace correspondiente al hacer scroll
+    // se activa el enlace al hacer scroll
     window.addEventListener("scroll", activateLink);
     activateLink();
+});
+
+// Obtener el botón de la flecha
+const backToTopButton = document.getElementById('back-to-top');
+
+// Función para mostrar u ocultar la flecha cuando el usuario hace scroll
+window.onscroll = function() {
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        backToTopButton.style.display = "block"; // Mostrar la flecha
+    } else {
+        backToTopButton.style.display = "none"; // Ocultar la flecha
+    }
+};
+
+// Función para hacer el scroll hacia arriba con un desplazamiento suave de 3 segundos
+backToTopButton.addEventListener('click', function() {
+    const startPosition = window.pageYOffset; // Posición actual del scroll
+    const endPosition = 0; // Queremos llegar a la parte superior de la página
+    const duration = 3000; // Duración del desplazamiento (3 segundos)
+    const startTime = performance.now(); // Capturamos el tiempo de inicio
+
+    // Función de animación para el scroll suave
+    function scrollAnimation(currentTime) {
+        const timeElapsed = currentTime - startTime; // Tiempo transcurrido
+        const progress = Math.min(timeElapsed / duration, 1); // Asegura que no se pase de 1
+
+        // Calcula la nueva posición de desplazamiento
+        window.scrollTo(0, startPosition + (endPosition - startPosition) * progress);
+
+        // Continúa la animación mientras no haya llegado al final
+        if (progress < 1) {
+            requestAnimationFrame(scrollAnimation);
+        }
+    }
+
+    requestAnimationFrame(scrollAnimation); // Inicia la animación
 });
